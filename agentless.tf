@@ -16,7 +16,7 @@ resource "google_service_account_iam_member" "allow_agentless_impersonation" {
 // Grant the service account permissions to access the resources it
 // needs to fulfill its purpose.
 resource "google_project_iam_member" "agentless_gke_read" {
-  project    = local.project_id
-  role       = "roles/container.admin" # container.developer doesn't give access to webhooks
-  member     = "serviceAccount:${google_service_account.chainguard_agentless.email}"
+  project = local.project_id
+  role    = "roles/container.admin" # container.developer doesn't give access to webhooks
+  member  = "serviceAccount:${google_service_account.chainguard_agentless.email}"
 }
