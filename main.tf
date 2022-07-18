@@ -17,7 +17,7 @@ resource "google_iam_workload_identity_pool_provider" "chainguard_provider" {
   provider                           = google-beta
   workload_identity_pool_id          = google_iam_workload_identity_pool.chainguard_pool.workload_identity_pool_id
   workload_identity_pool_provider_id = "chainguard-provider" # This gets 4-32 alphanumeric characters (and '-')
-  display_name                       = "Chainguard ${var.enforce_domain_name} provider"
+  display_name                       = "Chainguard provider"
   description                        = "This is the provider for impersonation by the ${var.enforce_domain_name} Chainguard environment's issuer for ${var.enforce_domain_name}."
 
   attribute_mapping = {

@@ -29,7 +29,7 @@ resource "google_project_iam_member" "cosigned_kms_pki_read" {
 
 // TODO(https://github.com/sigstore/sigstore/issues/467): remove this role when we can.
 resource "google_project_iam_member" "cosigned_kms_read" {
-  project    = var.project_id
+  project    = local.project_id
   role       = "roles/cloudkms.viewer"
   member     = "serviceAccount:${google_service_account.chainguard_cosigned.email}"
 }
