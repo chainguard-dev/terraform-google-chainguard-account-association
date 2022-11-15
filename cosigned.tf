@@ -8,7 +8,7 @@ resource "google_service_account" "chainguard_cosigned" {
 // Allow the provider (mapped token) to impersonate this service account if
 // the subject matches what we expect.
 resource "google_service_account_iam_member" "allow_cosigned_impersonation" {
-  for_each = toset(var.enforce_group_ids)
+  for_each = toset(local.enforce_group_ids)
 
   service_account_id = google_service_account.chainguard_cosigned.name
   role               = "roles/iam.workloadIdentityUser"
