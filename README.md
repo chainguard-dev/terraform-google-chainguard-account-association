@@ -72,8 +72,8 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | n/a |
-| <a name="provider_google-beta"></a> [google-beta](#provider\_google-beta) | n/a |
+| <a name="provider_google"></a> [google](#provider\_google) | 4.43.0 |
+| <a name="provider_google-beta"></a> [google-beta](#provider\_google-beta) | 4.43.0 |
 
 ## Modules
 
@@ -111,7 +111,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_enforce_domain_name"></a> [enforce\_domain\_name](#input\_enforce\_domain\_name) | Domain name of your Chainguard Enforce environment | `string` | `"enforce.dev"` | no |
-| <a name="input_enforce_group_ids"></a> [enforce\_group\_id](#input\_enforce\_group\_id) | Enforce IAM group IDs to bind your Google AWS account to | `list(string)` | n/a | yes |
+| <a name="input_enforce_group_ids"></a> [enforce\_group\_ids](#input\_enforce\_group\_ids) | Enforce IAM group IDs to bind your AWS account to | `list(string)` | n/a | yes |
 | <a name="input_google_project_id"></a> [google\_project\_id](#input\_google\_project\_id) | GCP Project ID. If not set, will default to provider default project id | `string` | `""` | no |
 
 ## Outputs
