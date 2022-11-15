@@ -43,7 +43,7 @@ To configured the connection on AWS side use this module as follows:
 module "chainguard-account-association" {
   source = "chainguard-dev/chainguard-account-association/aws"
 
-  enforce_group_id = "<< enforce group id>>"
+  enforce_group_ids = ["<< enforce group id >>"]
 }
 ```
 
@@ -111,7 +111,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_enforce_domain_name"></a> [enforce\_domain\_name](#input\_enforce\_domain\_name) | Domain name of your Chainguard Enforce environment | `string` | `"enforce.dev"` | no |
-| <a name="input_enforce_group_id"></a> [enforce\_group\_id](#input\_enforce\_group\_id) | Enforce IAM group ID to bind your AWS account to | `string` | n/a | yes |
+| <a name="input_enforce_group_ids"></a> [enforce\_group\_id](#input\_enforce\_group\_id) | Enforce IAM group IDs to bind your Google AWS account to | `list(string)` | n/a | yes |
 | <a name="input_google_project_id"></a> [google\_project\_id](#input\_google\_project\_id) | GCP Project ID. If not set, will default to provider default project id | `string` | `""` | no |
 
 ## Outputs

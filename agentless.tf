@@ -8,9 +8,11 @@ resource "google_service_account" "chainguard_agentless" {
 // Allow the provider (mapped token) to impersonate this service account if
 // the subject matches what we expect.
 resource "google_service_account_iam_member" "allow_agentless_impersonation" {
+  for_each = toset(var.enforce_group_ids)
+
   service_account_id = google_service_account.chainguard_agentless.name
   role               = "roles/iam.workloadIdentityUser"
-  member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.chainguard_pool.name}/attribute.sub/agentless:${var.enforce_group_id}"
+  member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.chainguard_pool.name}/attribute.sub/agentless:${each.value}"
 }
 
 // Grant the service account permissions to access the resources it
