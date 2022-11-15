@@ -29,7 +29,7 @@ Or using our (soon to be released publically) Terraform provider
 
 ```Terraform
 resource "chainguard_account_associations" "example" {
-  group = "<< enforce group id>>"
+  group = ["<< enforce group id>>"]
   google {
     project_id     = "<< project id >>"
     project_number = "<< project number >>"
