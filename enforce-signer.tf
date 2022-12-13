@@ -18,3 +18,9 @@ resource "google_project_iam_member" "signer_cert_requester" {
   role    = "roles/privateca.certificateRequester"
   member  = "serviceAccount:${google_service_account.chainguard_signer.email}"
 }
+
+resource "google_project_iam_member" "signer_encrypt_decrypter" {
+  project = local.project_id
+  role    = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+  member  = "serviceAccount:${google_service_account.chainguard_signer.email}"
+}
