@@ -91,6 +91,7 @@ No modules.
 | [google_project_iam_member.cosigned_kms_read](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
 | [google_project_iam_member.discovery_cluster_viewer](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
 | [google_project_iam_member.signer_cert_requester](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
+| [google_project_iam_member.signer_encrypt_decrypter](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
 | [google_project_service.iamcredentials-api](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_service) | resource |
 | [google_service_account.chainguard_agentless](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account) | resource |
 | [google_service_account.chainguard_canary](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account) | resource |

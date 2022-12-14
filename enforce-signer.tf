@@ -18,3 +18,10 @@ resource "google_project_iam_member" "signer_cert_requester" {
   role    = "roles/privateca.certificateRequester"
   member  = "serviceAccount:${google_service_account.chainguard_signer.email}"
 }
+
+// TODO(hectorj2f) Think about restricting this access to a keyring, e.g. key_ring_id = google_kms_key_ring.sigstore-keyring.id
+resource "google_project_iam_member" "signer_encrypt_decrypter" {
+  project = local.project_id
+  role    = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+  member  = "serviceAccount:${google_service_account.chainguard_signer.email}"
+}
