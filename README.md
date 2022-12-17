@@ -63,6 +63,7 @@ to bind to certain IAM roles. In particular it allows:
 This access is restricted to clusters and policies you've configured at or
 below the scope of the Enforce group you configure.
 
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 No requirements.
@@ -117,3 +118,4 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_provider_id"></a> [provider\_id](#output\_provider\_id) | GCP identity provider pool configured for Enforce |
+<!-- END_TF_DOCS -->
