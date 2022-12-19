@@ -20,3 +20,9 @@ resource "google_project_iam_member" "discovery_cluster_viewer" {
   role    = "roles/container.clusterViewer"
   member  = "serviceAccount:${google_service_account.chainguard_discovery.email}"
 }
+
+resource "google_project_iam_member" "discovery_run_viewer" {
+  project = local.project_id
+  role    = "roles/run.viewer"
+  member  = "serviceAccount:${google_service_account.chainguard_discovery.email}"
+}
