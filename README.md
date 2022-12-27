@@ -99,11 +99,11 @@ No modules.
 | [google_service_account.chainguard_cosigned](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account) | resource |
 | [google_service_account.chainguard_discovery](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account) | resource |
 | [google_service_account.chainguard_signer](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account) | resource |
-| [google_service_account_iam_member.allow_agentless_impersonation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account_iam_member) | resource |
-| [google_service_account_iam_member.allow_canary_impersonation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account_iam_member) | resource |
-| [google_service_account_iam_member.allow_cosigned_impersonation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account_iam_member) | resource |
-| [google_service_account_iam_member.allow_discovery_impersonation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account_iam_member) | resource |
-| [google_service_account_iam_member.allow_signer_impersonation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account_iam_member) | resource |
+| [google_service_account_iam_binding.allow_agentless_impersonation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account_iam_binding) | resource |
+| [google_service_account_iam_binding.allow_canary_impersonation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account_iam_binding) | resource |
+| [google_service_account_iam_binding.allow_cosigned_impersonation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account_iam_binding) | resource |
+| [google_service_account_iam_binding.allow_discovery_impersonation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account_iam_binding) | resource |
+| [google_service_account_iam_binding.allow_signer_impersonation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account_iam_binding) | resource |
 | [google_project.provider_default](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/project) | data source |
 
 ## Inputs
