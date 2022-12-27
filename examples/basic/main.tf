@@ -8,7 +8,7 @@ terraform {
     }
     chainguard = {
       # NB: This provider is currently not public
-      source = "chainguard-dev/chainguard"
+      source = "chainguard/chainguard"
     }
   }
 }
@@ -34,13 +34,13 @@ module "account_association" {
 
   google_project_id   = data.google_project.current.project_id
   enforce_domain_name = "chainguard.dev"
-  enforce_group_ids   = [chainguard_group.root.id]
+  enforce_group_id    = chainguard_group.root.id
 }
 
 resource "chainguard_account_associations" "demo-chaingaurd-dev-binding" {
   group = chainguard_group.root.id
   google {
     project_id   = data.google_project.current.project_id
-    project_name = data.google_project.current.project_name
+    project_number = data.google_project.current.number
   }
 }
