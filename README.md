@@ -29,7 +29,7 @@ Or using our (soon to be released publically) Terraform provider
 
 ```Terraform
 resource "chainguard_account_associations" "example" {
-  group = ["<< enforce group id>>"]
+  group = "<< enforce group id>>"
   google {
     project_id     = "<< project id >>"
     project_number = "<< project number >>"
@@ -43,7 +43,7 @@ To configured the connection on AWS side use this module as follows:
 module "chainguard-account-association" {
   source = "chainguard-dev/chainguard-account-association/aws"
 
-  enforce_group_ids = ["<< enforce group id >>"]
+  enforce_group_id = "<< enforce group id >>"
 }
 ```
 
@@ -72,8 +72,8 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 4.43.0 |
-| <a name="provider_google-beta"></a> [google-beta](#provider\_google-beta) | 4.43.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | n/a |
+| <a name="provider_google-beta"></a> [google-beta](#provider\_google-beta) | n/a |
 
 ## Modules
 
