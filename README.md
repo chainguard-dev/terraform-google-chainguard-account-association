@@ -9,43 +9,11 @@ Enforce](https://www.chainguard.dev/chainguard-enforce) and:
 a private GCR registry
 - Your signatures are created via Google KMS
 - Your using managed (i.e agentless) clusters in GKE
+- You're setting up a certificate authority for keyless signing
 
 ## Usage
+See [INSTALL.md](./INSTALL.md) for installation instructions.
 
-This module binds an Enforce IAM group to a GCP project. To set up the connect
-in Enforce using the CLI run:
-
-```
-export ENFORCE_GROUP_ID="<<uidp of target Enforce IAM group>>
-export GCP_PROJECT_NUMBER="<< project number >>"
-export GCP_PROJECT_ID="<< project id >>"
-
-chainctl iam group set-gcp $ENFORCE_GROUP_ID \
-  --project-number $GCP_PROJECT_NUMBER \
-  --project-id $GCP_PROJECT_ID
-```
-
-Or using our (soon to be released publically) Terraform provider
-
-```Terraform
-resource "chainguard_account_associations" "example" {
-  group = "<< enforce group id>>"
-  google {
-    project_id     = "<< project id >>"
-    project_number = "<< project number >>"
-  }
-}
-```
-
-To configured the connection on AWS side use this module as follows:
-
-```Terraform
-module "chainguard-account-association" {
-  source = "chainguard-dev/chainguard-account-association/aws"
-
-  enforce_group_id = "<< enforce group id>>"
-}
-```
 
 ## How does it work?
 
