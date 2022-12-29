@@ -6,7 +6,6 @@ variable "enforce_domain_name" {
   nullable    = false
 }
 
-
 variable "enforce_group_id" {
   type        = string
   description = "DEPRECATED: Please use 'enforce_group_ids'. Enforce IAM group ID to bind your AWS account to"
