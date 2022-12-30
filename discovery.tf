@@ -7,10 +7,10 @@ resource "google_service_account" "chainguard_discovery" {
 
 // Allow the provider (mapped token) to impersonate this service account if
 // the subject matches what we expect.
-resource "google_service_account_iam_member" "allow_discovery_impersonation" {
+resource "google_service_account_iam_binding" "allow_discovery_impersonation" {
   service_account_id = google_service_account.chainguard_discovery.name
   role               = "roles/iam.workloadIdentityUser"
-  member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.chainguard_pool.name}/attribute.sub/discovery:${var.enforce_group_id}"
+  members            = [for id in local.enforce_group_ids : "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.chainguard_pool.name}/attribute.sub/discovery:${id}"]
 }
 
 // Grant the service account permissions to access the resources it

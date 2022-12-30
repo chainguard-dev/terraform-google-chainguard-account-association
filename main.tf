@@ -2,7 +2,8 @@ data "google_project" "provider_default" {
 }
 
 locals {
-  project_id = var.google_project_id == "" ? data.google_project.provider_default.project_id : var.google_project_id
+  project_id        = var.google_project_id == "" ? data.google_project.provider_default.project_id : var.google_project_id
+  enforce_group_ids = length(var.enforce_group_ids) > 0 ? var.enforce_group_ids : [var.enforce_group_id]
 }
 
 // Providers define the scopes at which Chainguard services may impersonate
