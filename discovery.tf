@@ -50,7 +50,7 @@ resource "google_pubsub_topic" "gcp_auditlog_sink" {
 resource "google_project_iam_custom_role" "create_auditlog_subscriptions" {
   role_id     = "chainguardSubscriber"
   title       = "Chainguard Subscriber"
-  description = "This role allows certain Chainguard roles to manage pub/sub subscriptions."
+  description = "This role allows certain Chainguard service accounts to manage pub/sub subscriptions."
   permissions = [
     "pubsub.subscriptions.get",
     "pubsub.subscriptions.create",
@@ -64,7 +64,7 @@ resource "google_project_iam_member" "discover_auditlog_subscriber" {
   role    = "projects/${local.project_id}/roles/${google_project_iam_custom_role.create_auditlog_subscriptions.role_id}"
   member  = "serviceAccount:${google_service_account.chainguard_discovery.email}"
 }
-resource "google_pubsub_topic_iam_member" "subscriber" {
+resource "google_pubsub_topic_iam_member" "discovery_sink_subscriber" {
   project = google_pubsub_topic.gcp_auditlog_sink.project
   topic   = google_pubsub_topic.gcp_auditlog_sink.name
   role    = "roles/pubsub.subscriber"
