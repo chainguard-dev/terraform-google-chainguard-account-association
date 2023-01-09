@@ -23,7 +23,6 @@ resource "google_project_iam_custom_role" "chainguard_signer_ca_role" {
     "privateca.certificateAuthorities.list",
     "privateca.certificateAuthorities.get",
     "privateca.certificates.create",
-    "cloudkms.cryptoKeyEncrypterDecrypter",
     "cloudkms.cryptoKeys.get", // This role and the following roles are needed for signing with a KMS-based CA
     "cloudkms.cryptoKeys.list",
     "cloudkms.cryptoKeyVersions.viewPublicKey",
