@@ -13,7 +13,7 @@ variable "enforce_group_id" {
   sensitive   = false
 
   validation {
-    condition     = length(regexall("^[a-f0-9]{40}(\\/[a-f0-9]{16})*$", var.enforce_group_id)) == 1
+    condition     = var.enforce_group_id != "" ? length(regexall("^[a-f0-9]{40}(\\/[a-f0-9]{16})*$", var.enforce_group_id)) == 1 : true
     error_message = "The value 'enforce_group_id' must be a valid group id."
   }
 }
