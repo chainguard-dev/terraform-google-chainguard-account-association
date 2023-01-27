@@ -48,6 +48,7 @@ resource "google_pubsub_topic" "gcp_auditlog_sink" {
 // project containing the topic and service accounts.
 // See also: https://groups.google.com/g/cloud-pubsub-discuss/c/DhfkLMWcRok
 resource "google_project_iam_custom_role" "create_auditlog_subscriptions" {
+  project     = local.project_id
   role_id     = "chainguardSubscriber"
   title       = "Chainguard Subscriber"
   description = "This role allows certain Chainguard service accounts to manage pub/sub subscriptions."
