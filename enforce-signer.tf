@@ -28,6 +28,7 @@ resource "google_project_iam_custom_role" "chainguard_signer_ca_role" {
     "cloudkms.cryptoKeyVersions.viewPublicKey",
     "cloudkms.cryptoKeyVersions.useToSign",
     "cloudkms.cryptoKeyVersions.list",
+    "cloudkms.cryptoKeyVersions.get",
   ]
 }
 
