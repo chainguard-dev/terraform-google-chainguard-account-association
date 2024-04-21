@@ -7,10 +7,15 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+      with:
+        egress-policy: audit
+
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
     - name: Render terraform docs and fail on diff
-      uses: terraform-docs/gh-actions@main
+      uses: terraform-docs/gh-actions@62a6cc597a9a2ee6953471d4c9cc1668c66ebf36 # main
       with:
         working-dir: .
         output-file: README.md
