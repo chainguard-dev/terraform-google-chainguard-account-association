@@ -1,6 +1,6 @@
 // The service account to impersonate
 resource "google_service_account" "chainguard_canary" {
-  project    = local.project_id
+  project    = var.project_id
   account_id = "chainguard-canary"
   depends_on = [google_project_service.iamcredentials-api]
 }
@@ -10,5 +10,5 @@ resource "google_service_account" "chainguard_canary" {
 resource "google_service_account_iam_binding" "allow_canary_impersonation" {
   service_account_id = google_service_account.chainguard_canary.name
   role               = "roles/iam.workloadIdentityUser"
-  members            = [for id in local.enforce_group_ids : "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.chainguard_pool.name}/attribute.sub/canary:${id}"]
+  members            = [for id in var.group_ids : "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.chainguard_pool.name}/attribute.sub/canary:${id}"]
 }
